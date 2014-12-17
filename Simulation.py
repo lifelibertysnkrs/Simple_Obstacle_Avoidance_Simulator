@@ -30,6 +30,9 @@ class Simulation():
         print self.board.sensordata()
         self.movement(self.deltax,self.deltay)
 
+    def sensor(self):
+        return self.board.sensordata()
+
     def movement(self, deltax, deltay): #moves quadcopter around
         
         self.x+= deltax
