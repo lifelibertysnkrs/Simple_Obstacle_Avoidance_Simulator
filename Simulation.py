@@ -15,7 +15,7 @@ class Simulation():
         self.board.obstacles()
         self.board.target()
         self.canvas.bind("<1>", self.focus)   #user must click in window before key inputs can be made
-        self.canvas.bind("<Up>", self.forward) key inputs
+        self.canvas.bind("<Up>", self.forward) #key inputs
         self.canvas.bind("<Down>", self.backward)
         self.canvas.bind("<Left>", self.left)
         self.canvas.bind("<Right>", self.right)
