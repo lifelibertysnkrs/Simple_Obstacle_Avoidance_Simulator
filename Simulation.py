@@ -27,6 +27,7 @@ class Simulation():
             self.board.canvas.create_text(100, 100, text="COLLISION", anchor=SW, fill="green", font="Times 22")           
         if self.board.targetReached():
             self.board.canvas.create_text(100, 150, text="SUCCESS!", anchor=SW, fill="green", font="Times 22")
+        print self.board.sensordata()
         self.movement(self.deltax,self.deltay)
 
     def movement(self, deltax, deltay): #moves quadcopter around

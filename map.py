@@ -39,8 +39,21 @@ class map():
                 if (point[0]+5 >= (obstacle[0]) and point[0]-5 <= (obstacle[2])) and (point[1]+5 >= (obstacle[1]) and (point[1]-5 <= (obstacle[3]))):
                     return True
                 
-
-                    
+    def sensordata(self):
+         for obstacle in self.obstaclelist:
+            for point in self.quadcopter: #quadcopter is defined by 5 points: center and each corner
+                if (point[0]+5 >= (obstacle[0]) and point[0]-5 <= (obstacle[2])) and (point[1]+25 >= (obstacle[1]) and (point[1] <= (obstacle[3]))):
+                    return "Down"
+            for point in self.quadcopter: #quadcopter is defined by 5 points: center and each corner
+                if (point[0]+5 >= (obstacle[0]) and point[0]-5 <= (obstacle[2])) and (point[1] >= (obstacle[1]) and (point[1]-25 <= (obstacle[3]))):
+                    return "Up"
+            for point in self.quadcopter: #quadcopter is defined by 5 points: center and each corner
+                if (point[0]+55 >= (obstacle[0]) and point[0] <= (obstacle[2])) and (point[1]+5 >= (obstacle[1]) and (point[1]-5 <= (obstacle[3]))):
+                    return "Right"
+            for point in self.quadcopter: #quadcopter is defined by 5 points: center and each corner
+                if (point[0] >= (obstacle[0]) and point[0]-55 <= (obstacle[2])) and (point[1]+5 >= (obstacle[1]) and (point[1]-5 <= (obstacle[3]))):
+                    return "Left"    
+            
 
     def target(self):
         x = self.targetx
