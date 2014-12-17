@@ -30,7 +30,7 @@ class Simulation():
         self.movement(self.deltax,self.deltay)
 
     def movement(self, deltax, deltay): #moves quadcopter around
-    
+        
         self.x+= deltax
         self.y += deltay
     
@@ -41,7 +41,7 @@ class Simulation():
         self.deltay = 0
         
 
-        quad = quadcopter(self.canvas, self.x, self.y)
+        self.quad = quadcopter(self.canvas, self.x, self.y)
         self.board.root.after(10, self.check)
 
     def render(self):
@@ -50,12 +50,17 @@ class Simulation():
         
     def forward(self, event):
         self.deltay = -10
+        quaddel = self.quad.delete(self.canvas, self.x, self.y)
     def backward(self, event):
         self.deltay = 10
+        quaddel = self.quad.delete(self.canvas, self.x, self.y)
     def left(self, event):
         self.deltax = -10
+        quaddel = self.quad.delete(self.canvas, self.x, self.y)
     def right(self, event):
         self.deltax = 10
+        quaddel = self.quad.delete(self.canvas, self.x, self.y)
     def focus(self, event):
         self.canvas.focus_set()
+        quaddel = self.quad.delete(self.canvas, self.x, self.y)
 
